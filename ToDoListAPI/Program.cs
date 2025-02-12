@@ -35,19 +35,29 @@ namespace ToDoListAPI
                      securityScheme: new OpenApiSecurityScheme
                      {
                          Name = "Authorization",
-                         Description = "Enter a valid token",
+                         Description = "Enter a valid token : `Bearer Generated-JWT-Token`",
                          In = ParameterLocation.Header,
-                         Type = SecuritySchemeType.Http,
-                         Scheme = JwtBearerDefaults.AuthenticationScheme,
-                         Reference = new OpenApiReference
-                         {
-                             Type = ReferenceType.SecurityScheme,
-                             Id = JwtBearerDefaults.AuthenticationScheme
-                         }
-                     }
-                    );
-            }
-    );
+                         Type = SecuritySchemeType.ApiKey,
+                         Scheme = "Bearer"
+                     });
+
+                options.AddSecurityRequirement(
+                    new OpenApiSecurityRequirement
+                    {
+                        {
+                            new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = JwtBearerDefaults.AuthenticationScheme
+                                }
+                            },
+                            new string[] {}
+                        }
+                    });
+                    
+            });
 
             var app = builder.Build();
 
