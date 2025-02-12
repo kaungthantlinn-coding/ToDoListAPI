@@ -2,15 +2,15 @@
 A To-Do List API built with ASP.NET Core Web API, utilizing Entity Framework Core (EF Core), Repository Pattern, and Middleware for structured exception handling and logging.
 
 # 🚀 Features
-- CRUD operations for To-Do items
+- ✅ CRUD operations for To-Do items
+- 🔒 Secure API with JWT Authentication
+- 📦 Repository & Service layers for separation of concerns
 
-- Repository & Service layers for separation of concerns
+- 🛠 Middleware for exception handling and request logging
 
-- Middleware for exception handling and request logging
+- 💾 Uses Entity Framework Core with SQL Server
 
-- Uses Entity Framework Core with SQL Server
-
-- Swagger UI for API testing
+- 📊 Swagger UI for API testing
 
 # 🛠️ Technologies Used
 - ASP.NET Core Web API
